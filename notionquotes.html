@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+
+    <style>
+
+        .widget {
+            padding: 5x 5x;
+            color: #215969;
+            text-align: center;
+                max-width: 75%;
+            margin: auto;
+            font-variant-caps: petite-caps;
+            font-size: 2em;
+
+        }
+
+        div {
+             width: 95%;
+             min-height: 100px;
+
+            background-color: #b0ebf1;
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+}
+
+     
+    </style>
+</head>
+<body>
+
+    <div class="widget" id="widget"></div>
+
+
+<script>
+
+quotes=[
+"In the world of digital marketing, creativity is your secret weapon. Dare to think differently and set your brand apart.",
+"Don't be afraid to take risks in digital marketing. Great rewards come to those who are willing to push boundaries.",
+"Success in digital marketing is not about luck; it's about hard work, dedication, and constant adaptation.",
+"Embrace the power of storytelling in your digital marketing efforts. Connect with your audience on a deeper level.",
+"In the digital realm, data is your compass. Let it guide you in making informed decisions and achieving remarkable results.",
+"Your brand's online presence is a reflection of your passion and commitment. Make it shine in the digital world.",
+"Never underestimate the influence of a well-crafted social media post. It has the power to spark conversations and drive change.",
+"Digital marketing is a marathon, not a sprint. Stay focused, keep learning, and trust the process.",
+"Think of SEO as your brand's compass in the vast online landscape. Optimize and navigate your way to the top.",
+"Content is the fuel that powers digital marketing. Create valuable, engaging, and shareable content to fuel your success.",
+"Be patient and persistent in your digital marketing efforts. Rome wasn't built in a day, and neither is a thriving online presence.",
+"In the digital age, customer experience is paramount. Deliver exceptional experiences and watch your brand soar.",
+"Stay ahead of the curve in digital marketing by embracing emerging technologies and trends. Innovation is key.",
+"Engagement is the currency of digital marketing. Build meaningful connections with your audience and watch your brand grow.",
+"Don't just advertise; inspire. Leave a lasting impression through your digital marketing campaigns.",
+"Digital marketing is a game-changer for businesses of all sizes. Embrace it fully and unlock your brand's true potential.",
+"Measure, analyze, and optimize. The trifecta of success in digital marketing.",
+"Harness the power of personalization in your digital marketing strategies. Speak directly to your audience's needs and desires.",
+"Authenticity is the backbone of digital marketing. Stay true to your brand's values and watch your tribe rally behind you.",
+"Remember, in digital marketing, every click, every interaction, and every conversion counts. Make them count in your favor."
+];
+
+const INTERVAL = 86400000;
+
+function dispalyQuote(){
+
+    document.getElementById('widget').innerHTML =quotes[0];
+    quotes.forEach((quote, i) => {
+        setTimeout(() => {
+            document.getElementById('widget').innerHTML =quote;
+        }, i * INTERVAL);  
+    });
+    }
+
+    function dispalyWidget() {
+        dispalyQuote();
+        setTimeout(dispalyWidget, quotes.length*INTERVAL);
+    }
+    dispalyWidget()
+
+</script>
+
+</body>
+</html>
